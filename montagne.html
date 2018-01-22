@@ -1,0 +1,65 @@
+<html>
+  <head>
+  <title>Carousel Montagne</title>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.css"/>
+
+  <body>
+
+  <div class="carousel">
+    <div>
+        <img id="mont/montagne" class="w-100">
+    </div>
+    <div>
+        <img id="berr/berry" class="w-100">
+    </div>
+    <div>
+        <img id="lare/larep" class="w-100">
+    </div>
+    <div>
+        <img id="echo/echorep" class="w-100">
+    </div>
+    <div>
+        <img id="yonn/yonne" class="w-100">
+    </div>
+    <div>
+        <img id="jdce/jdcentre" class="w-100">
+    </div>
+    <div>
+        <img id="popc/popcentre" class="w-100">
+    </div>
+  </div>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
+  <script>
+  			function getImgUrl (site) {
+  				var date = new Date();
+  				var month = ((date.getUTCMonth() + 1)  < 10 ? '0' : '' )  + (date.getUTCMonth() + 1);
+  				var strDate = date.getUTCFullYear() + month + date.getUTCDate();
+  				return 	'http://unes.spqr.fr/image.php?image=' + site + '_d' + strDate + '.jpeg'
+  			}
+
+  			var images =  document.getElementsByTagName("img");
+  			for (var i in images) {
+  				let img = images[i] ;
+  				if (img && img.getAttribute("id")) {
+  					let url = getImgUrl(img.getAttribute("id"));
+  					img.setAttribute("src", url);
+  				}
+  			}
+  </script>
+  <script type="text/javascript">
+  $('.center').slick({
+    centerMode: true,
+    centerPadding: '100px',
+    slidesToShow: 6,
+      }
+    ]
+  });
+  </script>
+
+  </body>
+</html>
+
+JS
